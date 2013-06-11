@@ -1,36 +1,39 @@
-/*
+/* =============================================================
 
-    KRAKEN.CSS
+    Kraken v2.1
     A lightweight front-end boilerplate by Chris Ferdinandi.
     http://gomakethings.com
-
 
     Licensed under WTFPL.
     http://www.wtfpl.net/
 
 
-	COLORS
-	Blue: #0088cc
-	Dark Blue: #005580
-	Dark Gray: #272727
-	Meta Gray: #808080
-	Lite Gray: #e5e5e5
+    COLORS
+    Primary (Blue): #0088cc
+    Secondary (Dark Blue): #005580
+    Black: #272727
+    White: #ffffff
+    Gray: #808080
+    Light Gray: #e5e5e5
 
 
-	FONT STACKS
-    Serif: Georgia, Times, serif
-	Sans-Serif: "Helvetica Neue", Arial, sans-serif
-	Add your own here...
+    FONT STACKS
+    Sans-Serif (default): "Helvetica Neue", Arial, sans-serif
+    Serif (suggested): Georgia, Times, serif
+    Add your own here...
 
 
-	TYPOGRAPHIC SCALE
-	4px, 5px, 8px, 10px, 11px, 14px, 15px, 17px (base), 20px, 23px, 26px, 30px, 34px, 51px, 68px, 85px, 102px
+    TYPOGRAPHIC SCALE 
+    (For math purposes. Actual font sizes in ems.)
+    4px, 5px, 8px, 10px, 11px, 14px, 15px, 17px (base), 20px, 23px, 26px, 30px, 34px, 51px, 68px, 85px, 102px
     
+ * ============================================================= */
 
-*/
 
-/*  CSS RESET */
-/*  Meyer's CSS Reset, Normalized.css, and custom code */
+/* =============================================================
+    CSS RESET
+    Meyer's CSS Reset, Normalized.css, and custom code.
+ * ============================================================= */
 
 /*  Mobile Screen Resizing */
 
@@ -112,7 +115,10 @@ a:hover, a:active {
 
 
 
-/*  THE GRID */
+/* =============================================================
+    THE GRID
+    Structure and layout.
+ * ============================================================= */
 
 /*  Mobile-first. Single-column layout by default
  *  Container sets the maximum page width. Adjust as needed. */
@@ -233,7 +239,10 @@ a:hover, a:active {
 
 
 
-/*  TYPOGRAPHY */
+/* =============================================================
+    TYPOGRAPHY
+    Sets font styles for entire site.
+ * ============================================================= */
 
 body { 
     font-family: "Helvetica Neue", Arial, sans-serif;
@@ -241,7 +250,6 @@ body {
     line-height: 1.470588235; 
     color: #272727; 
     background: #ffffff;
-/*    border-top: .470588235em solid #e5e5e5;*/
 }
 
 p { 
@@ -268,7 +276,7 @@ p {
 }
 
 .text-taller {
-    font-size: 2em;
+    font-size: 3em;
     line-height: 1.4;
     font-weight: bold;
 }
@@ -441,7 +449,10 @@ q:before, q:after {
 
 
 
-/*  CODE */
+/* =============================================================
+    CODE
+    Styling for code and preformatted text.
+ * ============================================================= */
 
 code, pre { 
     font-family: Menlo, Monaco, "Courier New", monospace; 
@@ -480,8 +491,10 @@ pre code {
 
 
 
-/*  BUTTONS */
-/*  Styling for CSS3 buttons */
+/* =============================================================
+    BUTTONS
+    Styling for CSS buttons.
+ * ============================================================= */
 
 .btn {
     display: inline-block;
@@ -573,8 +586,10 @@ button, .btn {
 
 
 
-/*  FORMS */
-/*  Styling for form elements */
+/* =============================================================
+    FORMS
+    Styling for form elements.
+ * ============================================================= */
 
 form, fieldset { 
     margin-bottom: 1.529411765em;
@@ -639,6 +654,21 @@ select:focus {
     outline-offset: -.117647059em; 
 }
 
+
+/*  Inline Inputs */
+.input-inline {
+    display: inline;
+    width: auto;
+}
+
+
+/*  Condensed Inputs */
+.input-condensed {
+    line-height: 1;
+    padding: .117647059em;
+}
+
+
 @media (min-width: 40em) {
     input, textarea, select {
         line-height: 1.588235294;
@@ -649,8 +679,10 @@ select:focus {
 
 
 
-/*  ICONS */
-/*  Styling for icon fonts. */
+/* =============================================================
+    ICONS
+    Icon font styling.
+ * ============================================================= */
 
 @font-face { 
     font-family: 'icomoon'; 
@@ -682,14 +714,21 @@ select:focus {
 
 
 
-/*  PLACEHOLDER FOR EVERYTHING EXTRA */
-/*  Add additional tools here. */
+/* =============================================================
+    ADD-ONS PLACEHOLDER
+    A placeholder for add-on styling.
+    Expand the functionality of Kraken.
+    http://cferdinandi.github.io/kraken/addons.html
+ * ============================================================= */
 
 
 
 
 
-/*  BACKGROUND COLORS */
+/* =============================================================
+    BACKGROUND COLOR
+    Styling for background colors.
+ * ============================================================= */
 
 .bg-gray {
     background-color: #f4f4f4;
@@ -701,7 +740,10 @@ select:focus {
 
 
 
-/*  FLOATS & HIDES */
+/* =============================================================
+    ALIGNMENT, SPACING & VISIBILITY
+    Override default alignment, spacing and visibilty.
+ * ============================================================= */
 
 .text-center { 
     text-align: center; 
@@ -776,10 +818,11 @@ select:focus {
 
 
 
-/*  PRINT STYLES */
-/*  Styling for printed content. 
- *  Adapted from HTML5BP.
- *  http://html5boilerplate.com/ */
+/* =============================================================
+    PRINT STYLES
+    Styling for printed content. Adapted from HTML5BP.
+    http://html5boilerplate.com
+ * ============================================================= */
 
 @media print {
 

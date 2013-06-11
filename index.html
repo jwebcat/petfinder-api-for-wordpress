@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>The Petfinder API for WordPress Toolkit</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8">
+    <title>Petfinder API for WordPress</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- stylesheets -->
-    <link rel="stylesheet" href="kraken.css" type="text/css" />
+    <link rel="stylesheet" href="kraken.css" type="text/css">
 
     <!-- HTML5 Shim for IE 6-8 -->
     <!--[if lt IE 9]>
@@ -17,10 +17,10 @@
 	<section class="space-bottom bg-gray">
 	    <article class="container text-center">
 
-            <h1 class="text-taller space-bottom-small">The Petfinder API for WordPress Toolkit</h1>
-            <p class="text-tall text-muted">A collection of PHP, CSS and JavaScript to help you display a list of animals available for adoption on your WordPress site using the Petfinder API.</p>
+            <h1 class="text-taller no-space-bottom"><i class="icon-logo"></i> Petfinder for WordPress</h1>
+            <p class="text-tall text-muted">A collection of functions to help you display Petfinder listings on your WordPress site.</p>
 
-	        <p><a class="btn btn-blue btn-jumbo" href="https://github.com/cferdinandi/petfinder-api-for-wordpress/archive/master.zip">Download the Petfinder Toolkit</a></p>
+	        <p><a class="btn btn-blue btn-jumbo" href="https://github.com/cferdinandi/petfinder-api-for-wordpress/archive/master.zip">Download Petfinder for WP 2</a></p>
 
 	        <p>
 	            <span class="text-small">
@@ -36,93 +36,62 @@
 	<section class="space-bottom">
 	    <article class="container">
 
-	        <h1 class="text-center" id="more">Getting Started</h1>
 
-            <p>This toolkit is intended for web developers, and is intended to be customized for your site design. If you don't have any coding experience, try the fantastic <a href="http://wordpress.org/extend/plugins/petfinder-listings/">Petfinder Listings plugin</a> instead.</p>
+	        <h1 class="text-center" id="more">What's Included?</h1>
 
-            <p><em><strong>Note:</strong> This toolkit is not a WordPress plugin. It's a collection of files that you will need to manually add to your theme.</em></p>
+	        <p class="space-bottom-small">Petfinder for WordPress contains a handful of functions to help you quickly integrate Petfinder into your site:</p>
 
-            <hr>
+	        <ul>
+	            <li class="space-bottom-small"><strong>An API feed</strong> to pull in your Petfinder data.</li>
+	            <li class="space-bottom-small"><strong>Conversions.</strong> Change the default Petfinder values into descriptive, human-readable text (<em>ex. "Small" instead of "S"</em>).</li>
+	            <li class="space-bottom-small"><strong>A photo fetcher.</strong> Control the number and size of the photos, and display them easily with a simple function call.</li>
+	            <li class="space-bottom-small"><strong>Pet name cleanup.</strong> Remove weird characters from pet names.</li>
+	            <li class="space-bottom-small"><strong>Pet description cleanup.</strong> Remove the formatting and empty tags that get added by WYSIWYG editors.</li>
+	            <li class="space-bottom-small"><strong>A value condensor.</strong> Convert multi-word strings into single-word values that can be used as classes (<em>useful for filtering pets with JavaScript</em>).</li>
+	            <li class="space-bottom-small"><strong>Lists.</strong> Dynamically generate lists of all available animal types, breeds, sizes, ages, genders, and options.</li>
+	            <li class="space-bottom-small"><strong>Pet info.</strong> Grab key info, photos, descriptions and a link to their Petfinder profile for each pet in your shelter.</li>
+	            <li class="space-bottom-small"><strong>A shortcode.</strong> Display all of the info you want to share with a simple shortcode.</li>
+	        </ul>
+
+	        <p><em><strong>Note:</strong> Petfinder for WordPress is NOT a plugin. A working knowledge of PHP and WordPress functions is required. If you're looking for a plug-and-play solution, check out the <a href="http://wordpress.org/extend/plugins/petfinder-listings/">Petfinder Listings plugin</a>.</em></p>
+
+	        <hr>
 
 
-            <h1 class="text-center">The Quickstart Guide</h1>
+	        <h1 class="text-center">Getting Started</h1>
 
-            <p>This toolkit contains a few different files:</p>
+	        <p>Getting started with Petfinder for WordPress is a simple three-step process:</p>
+
+	        <ol>
+	            <li class="space-bottom-small">Add <code>petfinder-api-for-wp.php</code> to your theme, and call it in your <code>functions.php</code> file. Alternatively, copy-and-paste its contents into the file instead.</li>
+	            <li class="space-bottom-small">Under shelter info, add <a href="http://www.petfinder.com/developers/api-key">your API key</a>, shelter ID, and the number of pets you'd like to request information for.</li>
+	            <li class="space-bottom-small">Use the <code>[petfinder_list]</code> shortcode in the WordPress editor to display content. Alternatively, you can add <code>&lt;?php echo get_petfinder_list(); ?&gt;</code> to any WordPress template.</li>
+	        </ol>
+
+	        <hr>
+
+
+	        <h1 class="text-center">Customizing Your Content</h1>
+
+	        <p>The Petfinder for WordPress are building blocks you can use to create a customized display of your available pets.</p>
 
             <ul>
-                <li><code>functions.php</code> - The PHP script that pulls and processes the Petfinder API.</li>
-                <li><code>petfinder-api.css</code> - Structure and styling for the API content.</li>
-                <li><code>petfinder-api.js</code> - Some JavaScript progressive enhancement.</li>
-                <li><code>img > nophoto.jpg</code> - A fallback image for when an animal has no photos available.</li>
+                <li>Adjust default Petfinder values under the <code>get_pet_*()</code> Conversion functions.</li>
+                <li>Adjust the quantity and size of photos under the <code>get_pet_photos()</code> function.</li>
+                <li>Change list outputs under the <code>get_*_list()</code> functions.</li>
+                <li>Control what gets displayed for each pet under the <code>get_pet_info()</code> function.</li>
             </ul>
-            
-            <p>Add these files to your theme (merge them with your existing files or add them separately as appropriate). Then, open up the <code>functions.php</code> code and add your shelter's information to the API Attributes section at the top.</p>
 
-            <p><em><strong>Note:</strong> If you haven't already <a href="http://www.petfinder.com/developers/api-key">registered as a developer with Petfinder</a> yet, you will need to in order to obtain an API key.</em></p>
-
-            <h2 class="text-center">Display Your Pet Listings</h2>
-
-            <p>In the WordPress text editor, use the <code>[shelter_list]</code> shortcode. To include a list of animals directly in a PHP file, add <code>&lt;?php echo petf_shelter_list(); ?&gt;</code>.</p>
-
-            <hr>
+	        <hr>
 
 
-            <h1 class="text-center">Detailed Install Instructions</h1>
+	        <h1 class="text-center">Customizing the Shortcode</h1>
 
+	        <p>The <code>get_petfinder_list()</code> checks to make sure that the API feed has no errors, and that their are pets to display. Then it compiles the data from your functions into an output that can be displayed with a shortcode.</p>
 
-            <h2 class="text-center">Add the files to your theme.</h2>
+	        <p>You can customize what gets displayed by adding or removing functions and content from the <code>$petfinder_list</code> variable.</p>
 
-            <ol>
-                <li class="space-bottom-small">Copy-and-paste the contents of <code>functions.php</code> into your existing <code>functions.php</code> theme file. If this file doesn't already exist, add <code>functions.php</code> to your theme folder.</li>
-                <li class="space-bottom-small">Copy-and-paste the contents of the <code>petfinder-api.css</code> file into your stylesheet.</li>
-                <li class="space-bottom-small">Copy-and-paste the contents of the <code>petfinder-api.js</code> file into your existing stylesheet. If your theme does not have a javascript file, add this file to your theme folder and call it in the footer. <a href="http://gomakethings.com/jquery-wordpress/">Here's a short tutorial.</a></li>
-                <li class="space-bottom-small">Copy-and-paste <code>img > nophoto.jpg</code> into your theme folder. If you move <code>nophoto.jpg</code> to a folder other than <code>img</code>, you will need to update references to it in the <code>functions.php</code> file.</li>
-            </ol>
-
-
-            <h2 class="text-center">Add your information.</h2>
-
-            <p>If you haven't already done so, you'll need to <a href="http://www.petfinder.com/developers/api-key">register as a developer with Petfinder</a> to obtain an API key.</p>
-
-            <p>At the top of you <code>functions.php</code> code, you'll see a list of API Attributes:</p>
-
-            <pre>// API Attributes
-$api_key = 'xxxx';
-$count = '20';
-$shelter_id = 'xxxx';</pre>
-
-            <ol>
-                <li class="space-bottom-small">Replace the "xxxx" for <code>$api_key</code> with your API key from Petfinder.</li>
-                <li class="space-bottom-small">Replace the "20" for <code>$count</code> with the number of pets you need to pull data on (I like to go a bit higher than the actual number to give myself some wiggle room).</li>
-                <li class="space-bottom-small">Replace the "xxxx" for <code>$shelther_id</code> with the ID of the shelter you're looking to pull pet lists from.</li>
-            </ol>
-
-
-            <h2 class="text-center">Display Your Pet Listings</h2>
-
-            <p>In the WordPress text editor, type <code>[shelter_list]</code> to display a list of your pets. To include a list of animals directly in a PHP file, add <code>&lt;?php echo petf_shelter_list(); ?&gt;</code>.</p>
-
-            <hr>
-
-
-            <h1 class="text-center">Customizing Your Listings</h1>
-
-            <p>This toolkit is intended to be a starting point for working with the Petfinder API, not a finished product.</p>
-
-            <p>If you're comfortable working with PHP and JavaScript, you can add additional search criteria and pull in additional information from the Petfinder API (such as spay and neuter status, whether or not an animal is housebroken, or type of animal.)</p>
-
-            <p>The grid used to display pet information is adapted from <a href="http://cferdinandi.github.com/kraken/">Kraken</a>, a front-end boilerplate. You may prefer to use your own.</p>
-            
-            <hr>
-
-
-            <h1 class="text-center">Requires jQuery</h1>
-            
-            A few of the scripts used in this toolkit require jQuery, so make sure you include that in your theme as well.
-
-            Not sure how? <a href="http://gomakethings.com/jquery-wordpress/">Here's a short tutorial.</a>
-
-            <hr>
+	        <hr>
 
 
             <h1 class="text-center">Performance Considerations</h1>
@@ -140,6 +109,7 @@ $shelter_id = 'xxxx';</pre>
 
             <p>To fix this, increase the <code>max_execution_time</code> for your server. The process for doing this varies by hosting provider. You can find general information in the <a href="http://php.net/manual/en/function.set-time-limit.php">PHP manual</a>.</p>
 
+	        
 
         </article>
 	</section>
@@ -148,6 +118,8 @@ $shelter_id = 'xxxx';</pre>
         <article class="container">
 
             <p class="text-small text-muted text-center">Built by <a href="http://gomakethings.com">Chris Ferdinandi</a>. Free to use under the <a href="http://gomakethings.com/mit/">MIT License</a>.</p>
+
+            <p class="text-small text-muted text-center">Petfinder for WordPress is an add-on for <a href="http://cferdinandi.github.com/kraken/">Kraken</a>, a lightweight, mobile-first boilerplate for front-end web developers. It works great as a standalone product, too.</p>
 
         </article>
 	</footer>
